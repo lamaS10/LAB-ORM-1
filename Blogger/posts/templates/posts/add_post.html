@@ -5,13 +5,17 @@
 {% block content %}
 <h2>Add a New Post</h2>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+
     <label>Title:</label><br>
     <input type="text" name="title" placeholder="Enter title" required><br><br>
 
     <label>Content:</label><br>
     <textarea name="content" rows="5" placeholder="Write your post here..." required></textarea><br><br>
+
+    <label>Image:</label><br>
+    <input type="file" name="poster" accept="image/*"><br><br>
 
     <label>Publish Now?</label>
     <input type="checkbox" name="is_published" checked><br><br>

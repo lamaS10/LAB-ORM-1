@@ -1,97 +1,236 @@
-/* ===== Blogger Style by Lama ===== */
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #fafafa;
+    background-color: #f4f4f5;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
-/* Header */
 .header {
-    background-color: #3c8dbc;
-    color: white;
-    padding: 15px;
+    background-color: #e5e5e5;
+    color: #333;
+    padding: 18px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.header h1,
 .header a {
-    color: white;
+    color: #333;
     text-decoration: none;
-    margin-right: 15px;
     font-weight: bold;
+}
+
+.header nav a {
+    margin-left: 20px;
 }
 
 .header a:hover {
-    text-decoration: underline;
+    color: #555;
 }
 
-/* Main container */
 .container {
-    padding: 20px 40px;
+    padding: 30px 40px;
 }
 
-/* Posts */
-.post {
+
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 25px;
+}
+
+.post-card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: 0.2s ease-in-out;
 }
 
-.post h3 {
-    color: #3c8dbc;
-    margin-bottom: 5px;
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
 }
 
-.post small {
-    color: #777;
+.post-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-.draft {
-    color: red;
-    font-weight: bold;
+.post-card h3 {
+    color: #555;
+    margin-bottom: 8px;
 }
 
-/* Forms */
+.post-card small {
+    color: #666;
+}
+
+.view-btn {
+    display: inline-block;
+    background: #6c757d;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 12px;
+    transition: 0.2s ease-in-out;
+}
+
+.view-btn:hover {
+    background: #5a6268;
+}
+
+
+
 form {
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     max-width: 600px;
+    margin-top: 20px;
 }
 
-input[type="text"], textarea, input[type="datetime-local"] {
+input[type="text"],
+textarea,
+input[type="datetime-local"],
+input[type="file"] {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 button {
-    background-color: #3c8dbc;
+    background-color: #555;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 15px;
 }
 
 button:hover {
-    background-color: #357ca5;
+    background-color: #333;
 }
 
-/* Footer */
 .footer {
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #e5e5e5;
     padding: 10px;
-    margin-top: 30px;
+    margin-top: 40px;
     color: #555;
+}
+
+
+
+.detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.publish-info {
+    margin-bottom: 10px;
+}
+
+.published {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.not-published {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.detail-image {
+    width: 100%;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+.detail-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.detail-content {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    background: #6c757d;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: #5a6268;
+}
+.post-card img {
+    width: 100%;
+    height: 220px;        
+    object-fit: cover;    
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+.detail-actions {
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+}
+
+.btn-action {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.edit-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #565e64;
+}
+
+.delete-btn,
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover,
+.btn-danger:hover {
+    background: #b02a37;
 }
